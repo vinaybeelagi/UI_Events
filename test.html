@@ -6,14 +6,24 @@
     <title>Document</title>
 </head>
 <body>
+    <h1 id="heading">content heading</h1>
     <input type="button" id="btn" value="clickme">
+    
     <script>
+        document.getElementsByTagName('h1')[0].innerHTML = "changed heading"
         let btn = document.getElementById('btn')
         btn.addEventListener('click',()=>{
      let para = document.createElement('p')
      para.textContent = "hello DOM"
      document.body.append(para)
         })
+        let pdt = (a,b) => {return a*b}
+        let result = pdt(4,6);
+        let div = document.createElement('div')
+        div.textContent = `${result}`; 
+        document.body.append(div);
+        
+
     </script>
        
 </body>
