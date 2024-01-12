@@ -1,30 +1,28 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
-    <h1 id="heading">content heading</h1>
-    <input type="button" id="btn" value="clickme">
-    
-    <script>
-        document.getElementsByTagName('h1')[0].innerHTML = "changed heading"
-        let btn = document.getElementById('btn')
-        btn.addEventListener('click',()=>{
-     let para = document.createElement('p')
-     para.textContent = "hello DOM"
-     document.body.append(para)
-        })
-        let pdt = (a,b) => {return a*b}
-        let result = pdt(4,6);
-        let div = document.createElement('div')
-        div.textContent = `${result}`; 
-        document.body.append(div);
-        
-
-    </script>
-       
-</body>
+    <form id="pdt">
+      <label for="num1"> Number1</label>
+      <input type="text" id="n1" />
+      <label for="num2"> Number2</label>
+      <input type="number" id="n2" />
+      <label for="Result" > Result</label>
+      <input type="number" id="res" />
+      <input type="button" value="submit" id="btn">
+    </form>
+  </head>
+  <body>
+ <script>
+    let submit = document.getElementById('btn')
+    submit.addEventListener('click',()=>{
+        let n1 = document.getElementById('n1')
+        let n2 = document.getElementById('n2')
+        let res = document.getElementById('res')
+        res.value = n1.value*n2.value
+    })
+ </script>
+  </body>
 </html>
