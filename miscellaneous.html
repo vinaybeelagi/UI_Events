@@ -1,0 +1,29 @@
+// If node is a text node, then offset must be the position in its text.
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Range Example</title>
+</head>
+<body>
+
+<p id="p">Hello</p>
+
+<script>
+  // Get the reference to the <p> element
+  let p = document.getElementById('p');
+
+  // Create a Range object
+  let range = new Range();
+
+  // Set the start and end positions of the Range
+  range.setStart(p.firstChild, 2);
+  range.setEnd(p.firstChild, 4);
+
+  // toString of a range returns its content as text
+  console.log(range.toString()); // Output: ll
+</script>
+
+</body>
+</html>
